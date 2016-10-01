@@ -16,7 +16,11 @@ export default class Ou extends Koma {
   }
 
   _render() {
-    return '王'
+    if (this.owner.name === 'gote') {
+      return '玉'
+    } else {
+      return '王'
+    }
   }
 
 }

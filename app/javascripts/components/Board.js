@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 import KomaComponent from './KomaMove'
-//import eventProcessor from '../event_processor.js'
+import Event from './Event'
 
 export default class Board extends Component {
 
   constructor() {
     super()
+    this.event = new Event()
   }
 
   render() {
@@ -52,16 +53,7 @@ export default class Board extends Component {
 
   handleCellClick(x, y) {
     return () => {
-      alert(x, y)
+      this.event.clickCell(x, y)
     }
   }
-
-  // handleCellClick(x, y) {
-  //   return () => {
-  //     eventProcessor.clickCell(x, y)
-  //   }
-  // }
 }
-//
-// import KomaComponent from './koma.jsx'
-// import eventProcessor from '../event_processor.js'

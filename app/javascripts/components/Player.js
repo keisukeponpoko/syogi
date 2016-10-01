@@ -8,7 +8,7 @@ export default class Player {
     this.ou = ou
   }
 
-  // equals(player) {
-  //   return this.name == player.name
-  // }
+  equals(player) {
+    return this.name == player.name
+  }
 }

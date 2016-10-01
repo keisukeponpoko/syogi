@@ -3,7 +3,7 @@ import Koma from './komas/Koma'
 import Player from './Player'
 import Komas from './Komas'
 
-export default class Facilitator extends Component {
+class Facilitator extends Component {
    constructor() {
      super()
      this.players = {}
@@ -141,3 +141,5 @@ export default class Facilitator extends Component {
      return this.komas.getKomaByPosition(x, y)
    }
 }
+
+export default new Facilitator()

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-export default class Store extends Component {
+class Store extends Component {
    constructor() {
      super()
      this.state = {}
@@ -52,3 +52,5 @@ export default class Store extends Component {
      return komadaiKomas
    }
 }
+
+export default new Store()
