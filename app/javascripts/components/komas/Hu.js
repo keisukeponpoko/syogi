@@ -1,23 +1,27 @@
-import React from 'react';
-import Koma from './koma.js'
+import Koma from './Koma'
 
-export default class Ou extends Koma {
+export default class Hu extends Koma {
   getNormaMovement() {
     return {
-      normal : {
-        num: 8,
-        dx: [-1, 0, 1, -1, 1, -1, 0, 1],
-        dy: [-1, -1, -1, 0, 0, 1, 1, 1]
+      normal: {
+        num: 1,
+        dx: [0],
+        dy: [-1]
       }
     }
   }
 
-  canNareru() {
-    return false
+  getNarigomaMovement() {
+    return {
+      normal: {
+        num: 6,
+        dx: [-1, 0, 1, -1, 1, 0],
+        dy: [-1, -1, -1, 0, 0, 1]
+      }
+    }
   }
 
   _render() {
-    return '王'
+    return this.narigoma? 'と' : '歩'
   }
-
 }

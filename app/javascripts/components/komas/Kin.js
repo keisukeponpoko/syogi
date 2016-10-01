@@ -1,12 +1,12 @@
-import Koma from './koma.js'
+import Koma from './Koma'
 
-export default class Ou extends Koma {
+export default class Kin extends Koma {
   getNormaMovement() {
     return {
-      normal : {
-        num: 8,
-        dx: [-1, 0, 1, -1, 1, -1, 0, 1],
-        dy: [-1, -1, -1, 0, 0, 1, 1, 1]
+      normal: {
+        num: 6,
+        dx: [-1, 0, 1, -1, 1, 0],
+        dy: [-1, -1, -1, 0, 0, 1]
       }
     }
   }
@@ -16,7 +16,6 @@ export default class Ou extends Koma {
   }
 
   _render() {
-    return '王'
+    return '金'
   }
-
 }
