@@ -3,6 +3,18 @@ var browserify = require('browserify');
 var babelify = require('babelify');
 var notify  = require('gulp-notify');
 var source = require('vinyl-source-stream');
+var mocha = require('gulp-mocha');
+var gutil = require('gulp-util');
+
+gulp.task('mocha', function() {
+  return gulp.src(['test/javascripts/*.js'], { read: false })
+    .pipe(mocha({ reporter: 'list'}))
+    .on('error', gutil.log);
+});
+
+gulp.task('watch-mocha', function() {
+    gulp.watch(['public/javascripts/**', 'test/javascripts/**'], ['mocha']);
+});
 
 gulp.task('browserify-app', function() {
   browserify('./app/javascripts/app.js', {debug: true})
